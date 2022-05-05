@@ -11,22 +11,22 @@ namespace CustomLoadAudio.Modules
     {
         internal static IEnumerator SetLoadAudio()
         {
-            if (!Directory.Exists($"{MelonUtils.GameDirectory}\\UserData\\Mezque\\CustomLoadAudio"))
+            if (!Directory.Exists($"{MelonUtils.GameDirectory}\\UserData\\CustomLoadAudio"))
             {
-                System.IO.Directory.CreateDirectory($"{MelonUtils.GameDirectory}\\UserData\\Mezque\\CustomLoadAudio");
+                System.IO.Directory.CreateDirectory($"{MelonUtils.GameDirectory}\\UserData\\CustomLoadAudio");
             }
-            if (!File.Exists($"{MelonUtils.GameDirectory}\\UserData\\Mezque\\CustomLoadAudio\\{Prefs.FileName.Value}"))
+            if (!File.Exists($"{MelonUtils.GameDirectory}\\UserData\\CustomLoadAudio\\{Prefs.FileName.Value}"))
             {
-                ModLogger.Msg(ConsoleColor.White, $"No Custom Load Audio Found, To Use A Custom Audio Place A .wav File To Load From {MelonUtils.GameDirectory}\\UserData\\Mezque\\CustomLoadAudio\\{Prefs.FileName.Value} As Your Load Audio!");
+                ModLogger.Msg(ConsoleColor.White, $"No Custom Load Audio Found, To Use A Custom Audio Place A .wav File To Load From {MelonUtils.GameDirectory}\\UserData\\CustomLoadAudio\\{Prefs.FileName.Value} As Your Load Audio!");
             }
-            if (File.Exists($"{MelonUtils.GameDirectory}\\UserData\\Mezque\\CustomLoadAudio\\{Prefs.FileName.Value}"))
+            if (File.Exists($"{MelonUtils.GameDirectory}\\UserData\\CustomLoadAudio\\{Prefs.FileName.Value}"))
             {
-                ModLogger.Msg(ConsoleColor.White, $"Found Custom Load Audio, Using Audio From {MelonUtils.GameDirectory}\\UserData\\Mezque\\CustomLoadAudio\\{Prefs.FileName.Value} As Your Load Audio!");
+                ModLogger.Msg(ConsoleColor.White, $"Found Custom Load Audio, Using Audio From {MelonUtils.GameDirectory}\\UserData\\CustomLoadAudio\\{Prefs.FileName.Value} As Your Load Audio!");
                 while (GameObject.Find("UserInterface/MenuContent/Popups/LoadingPopup") == null)
                     yield return null;
                 var audioSource = GameObject.Find("UserInterface/MenuContent/Popups/LoadingPopup").GetComponentInChildren<AudioSource>(true);
 
-                var unityWebRequest = UnityWebRequest.Get($"{MelonUtils.GameDirectory}\\UserData\\Mezque\\CustomLoadAudio\\{Prefs.FileName.Value}");
+                var unityWebRequest = UnityWebRequest.Get($"{MelonUtils.GameDirectory}\\UserData\\CustomLoadAudio\\{Prefs.FileName.Value}");
                 unityWebRequest.SendWebRequest();
                 while (!unityWebRequest.isDone)
                     yield return null;
