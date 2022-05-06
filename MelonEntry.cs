@@ -36,10 +36,13 @@ public class MelonEntry : MelonMod
                 AudioType.UNKNOWN);
 
         audioclip.hideFlags = HideFlags.DontUnloadUnusedAsset;
-        
-        while (MonoBehaviourPublicObVoBoAwVoBoVoBoVoBoUnique.field_Private_Static_MonoBehaviourPublicObVoBoAwVoBoVoBoVoBoUnique_0 == null) yield return null;
 
-        var source1 = MonoBehaviourPublicObVoBoAwVoBoVoBoVoBoUnique.field_Private_Static_MonoBehaviourPublicObVoBoAwVoBoVoBoVoBoUnique_0.transform.Find("LoadingSound")
+        while (MonoBehaviourPublicObVoBoAwVoBoVoBoVoBoUnique
+                   .field_Private_Static_MonoBehaviourPublicObVoBoAwVoBoVoBoVoBoUnique_0 == null)
+            yield return null;
+
+        var source1 = MonoBehaviourPublicObVoBoAwVoBoVoBoVoBoUnique
+            .field_Private_Static_MonoBehaviourPublicObVoBoAwVoBoVoBoVoBoUnique_0.transform.Find("LoadingSound")
             .GetComponent<AudioSource>();
         source1.clip = audioclip;
         source1.Play();
