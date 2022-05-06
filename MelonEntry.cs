@@ -4,7 +4,7 @@ using MelonLoader;
 using UnityEngine;
 using UnityEngine.Networking;
 
-[assembly: MelonInfo(typeof(CustomLoadingAudio.MelonEntry), "CustomLoadingAudio", "1.0.0.0", "Dotlezz")]
+[assembly: MelonInfo(typeof(CustomLoadingAudio.MelonEntry), "CustomLoadingAudio", "1.0.0.0", "Dotlezz", "https://github.com/Dotlezz/CustomLoadingAudio")]
 [assembly: MelonGame("VRChat", "VRChat")]
 [assembly: MelonColor(ConsoleColor.DarkMagenta)]
 
