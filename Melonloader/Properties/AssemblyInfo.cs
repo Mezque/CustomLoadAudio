@@ -21,5 +21,5 @@ using System.Runtime.InteropServices;
 
 internal struct AssemblyInfo
 {
-    internal const string Version = "2.0.0.0";
+    internal const string Version = "3.0.0.0";
 }
